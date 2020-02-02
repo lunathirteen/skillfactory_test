@@ -28,9 +28,9 @@ def print_structure(data, root_id, result={}, output='\t'):
     if data['blocks'][root_id].get('children', 0) == 0:
         return
     else:
-        output_string = output + str(data['blocks'][root_id]['display_name'])+': '+str(data['blocks'][root_id]['id'])
+        output_string = output + str(data['blocks'][root_id]['display_name'])+': '+str(data['blocks'][root_id]['block_id'])
         print(output_string)
-        result[data['blocks'][root_id]['display_name']] = data['blocks'][root_id]['id']
+        result[data['blocks'][root_id]['display_name']] = data['blocks'][root_id]['block_id']
         for child_id in data['blocks'][root_id]['children']:
             print_structure(data, child_id, result, '\t' + output)
 
